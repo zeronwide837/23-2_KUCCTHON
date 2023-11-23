@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Harmony_B", "Harmony_M", sans-serif;
+}
+
+/* Global Styles */
+html {
+  font-size: 10px;
+}
+
+.not-modal {
+  position: absolute;
+  top: 0;
+  left: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  margin: 0;
+  padding: 5rem 12rem;
+  color: white;
+  background: var(--main-blue, #0a62a9);
+  margin-top: 3rem;
+}
+
+.store-container {
+  font-family: "Harmony_M";
+  color: #fff;
+  font-size: 9rem;
+}
+
+.ranking-container {
+  font-size: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 10rem;
+}
+
+.not-modal .rank {
+  font-size: 10rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+
+  gap: 3rem;
+}
+.mySoju,
+.topBeer,
+.topMakjuli {
+  font-size: 4rem;
+}
+
+button {
+  margin: 2rem;
+  width: 42.7rem;
+  height: 12.3rem;
+  flex-shrink: 0;
+  position: relative;
+  top: 7rem;
+}
+
+.topNum {
+  font-size: 4rem;
+}
+
+.myName {
+  margin-left: 3rem;
+  font-size: 4rem;
+}
+
+.myPercent {
+  font-size: 2.5rem;
+  margin-right: 3rem;
+}
+
+.w-btn,
+.w-btn-outline {
+  position: relative;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  border-radius: 1.5rem;
+  font-family: "Harmony_M";
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
+  transition: 0.25s;
+}
+
+.w-btn {
+  color: var(--main-blue, #0a62a9);
+  font-size: 9rem;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.w-btn-outline {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.w-btn-indigo,
+.w-btn-indigo-outline {
+  color: var(--main-blue, #0a62a9);
+}
+
+.w-btn-indigo {
+  background-color: aliceblue;
+  background-color: #ff00ff; /* 형광색: 마젠타 */
+  border: none;
+  animation: shiningAnimation 0.5s infinite;
+}
+
+.w-btn-indigo-outline {
+  border: 3px solid aliceblue;
+}
+
+.w-btn-indigo-outline:hover {
+  color: #1e6b7b;
+  background: aliceblue;
+}
+
+@keyframes shiningAnimation {
+  0% {
+    background-color: #ff00ff; /* 시작 색상: 마젠타 */
+    box-shadow: 0 0 10px 5px #ff00ff; /* 시작 그림자 효과: 마젠타 */
+  }
+  50% {
+    background-color: #00ff00; /* 중간 색상: 녹색 */
+    box-shadow: 0 0 20px 10px #00ff00; /* 중간 그림자 효과: 녹색 */
+  }
+  100% {
+    background-color: #ff00ff; /* 끝 색상: 마젠타 */
+    box-shadow: 0 0 10px 5px #ff00ff; /* 끝 그림자 효과: 마젠타 */
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>지도 생성하기</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/map.css' %}" /> -->
+  </head>
+  <body>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width: 100%; height: 720px"></div>
+    <form id="storeForm" action="/" method="post">
+    {% csrf_token %}
+      <input type="hidden" id="store-id" name="store_id" />
+    </form>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1d31433ea493ae011d9cc33d89c0e62e"
+    ></script>
+    <script>
+      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(37.584165, 127.029425), // 지도의 중심좌표
+          level: 3, // 지도의 확대 레벨
+        };
+
+      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+      var map = new kakao.maps.Map(mapContainer, mapOption);
+
+      // 마커를 표시할 위치와 title 객체 배열입니다
+      var positions = [
+        {
+          store_id: "막걸리 찬가",
+          latlng: new kakao.maps.LatLng(37.583684, 127.029062),
+          img_src: "{% static 'src/Ellipse8.png' %}",
+        },
+        {
+          store_id: "막걸리집",
+          latlng: new kakao.maps.LatLng(37.58567, 127.029853),
+          img_src: "{% static 'src/Ellipse8.png' %}",
+        },
+        {
+          store_id: "춘자",
+          latlng: new kakao.maps.LatLng(37.584439, 127.030425),
+          img_src: "{% static 'src/Ellipse8.png' %}",
+        },
+        {
+          store_id: "땡전집",
+          latlng: new kakao.maps.LatLng(37.585081, 127.029264),
+          img_src: "{% static 'src/Ellipse6.png' %}",
+        },
+        {
+          store_id: "영철버거",
+          latlng: new kakao.maps.LatLng(37.583191, 127.028786),
+          img_src: "{% static 'src/Ellipse6.png' %}",
+        },
+        {
+          store_id: "삼성통닭",
+          latlng: new kakao.maps.LatLng(37.583429, 127.029381),
+          img_src: "{% static 'src/Ellipse6.png' %}",
+        },
+        {
+          store_id: "쿠마",
+          latlng: new kakao.maps.LatLng(37.585348, 127.029653),
+          img_src: "{% static 'src/Ellipse4.png' %}",
+        },
+        {
+          store_id: "안암꼬치",
+          latlng: new kakao.maps.LatLng(37.583443, 127.029969),
+          img_src: "{% static 'src/Ellipse4.png' %}",
+        },
+        {
+          store_id: "슬기로운 맥주생활",
+          latlng: new kakao.maps.LatLng(37.58494, 127.029262),
+          img_src: "{% static 'src/Ellipse4.png' %}",
+        },
+      ];
+
+      for (var i = 0; i < positions.length; i++) {
+        const position = positions[i]
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = positions[i].img_src;
+        // 마커 이미지의 이미지 크기 입니다
+        var imageSize = new kakao.maps.Size(30, 30);
+
+        // 마커 이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+          map: map, // 마커를 표시할 지도
+          position: positions[i].latlng, // 마커를 표시할 위치
+          store_id: positions[i].store_id, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          clickable: true,
+          image: markerImage, // 마커 이미지
+        });
+
+        kakao.maps.event.addListener(marker, "click", function () {
+            document.getElementById("store-id").value = position.store_id;
+            console.log(2)
+
+            var storeForm = document.getElementById("storeForm");
+            console.log(3)
+
+            storeForm.submit();
+          
+        });
+      }
+    </script>
+  </body>
+</html>

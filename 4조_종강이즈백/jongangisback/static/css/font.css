@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Harmony_B";
+  src: url("../font/Harmony_B.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Harmony_L";
+  src: url("../font/Harmony_L.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Harmony_M";
+  src: url("../font/Harmony_M.ttf") format("truetype");
+}

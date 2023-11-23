@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>모달창 구현</title>
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/order.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+    <link rel="stylesheet" href="../static/css/font.css" />
+    <link rel="stylesheet" href="../static/css/order.css" />
+    <link rel="stylesheet" href="../static/css/modal.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <a class="btn js-click-modal">Open Modal</a>
+      <div class="modal">
+        <div class="order-container">
+          <form action="" method="post" name="signup">
+            {% csrf_token %}
+            <!-- action에는 입력된 로그인 데이터를 보낼 서버 페이지의 주소 -->
+            <div class="login-container">
+              <input
+                type="text"
+                name="user_id"
+                class="nickname"
+                placeholder="닉네임"
+              />
+              <input
+                type="number"
+                name="people"
+                class="people-num"
+                placeholder="몇 명?"
+              />
+              <input type="text" name="store_id" id="store_id" />
+            </div>
+            <!-- login-container -->
+            <div class="type-container container">
+              <h1>주종</h1>
+              <div class="type-buttons">
+                <div class="drink soju-container">
+                  <img
+                    class="img-soju"
+                    src="{% static './src/img-soju.jpg' %}"
+                    alt="soju"
+                    id="soju"
+                  />
+                  <div class="soju-count-container container">
+                    <div class="count-btn" id="soju-minus">-</div>
+                    <input
+                      type="number"
+                      name="soju_quantity"
+                      value="0"
+                      id="soju-quantity"
+                    />
+                    <div class="count-btn" id="soju-plus">+</div>
+                  </div>
+                  <!-- count-container -->
+                </div>
+                <!-- soju-container -->
+                <div class="drink beer-container">
+                  <img
+                    class="img-beer"
+                    src="{% static './src/img-beer.jpg' %}"
+                    alt="beer"
+                    id="beer"
+                  />
+                  <div class="beer-count-container container">
+                    <div class="count-btn" id="beer-minus">-</div>
+                    <input
+                      type="number"
+                      name="beer_quantity"
+                      value="0"
+                      id="beer-quantity"
+                    />
+                    <div class="count-btn" id="beer-plus">+</div>
+                  </div>
+                  <!-- count-container -->
+                </div>
+                <!-- beer-container -->
+                <div class="drink mak-container">
+                  <img
+                    class="img-mak"
+                    src="{% static './src/img-mak.jpg' %}"
+                    alt="mak"
+                    id="mak"
+                  />
+                  <div class="mak-count-container container">
+                    <div class="count-btn" id="mak-minus">-</div>
+                    <input
+                      type="number"
+                      name="makguli_quantity"
+                      value="0"
+                      id="mak-quantity"
+                    />
+                    <div class="count-btn" id="mak-plus">+</div>
+                  </div>
+                  <!-- count-container -->
+                </div>
+                <!-- mak-container -->
+              </div>
+              <!-- type-buttons -->
+            </div>
+            <!-- type-container -->
+            <div class="order-btn-container">
+              <input
+                type="submit"
+                class="btn js-close-modal"
+                id="order-btn"
+                value="주문!"
+              />
+            </div>
+            <!-- order-btn-container -->
+          </form>
+        </div>
+        <!-- order-container -->
+      </div>
+      <!-- modal -->
+    </div>
+    <!-- container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static './script/index.js' %}"></script>
+    <script src="{% static './script/count.js' %}"></script>
+    <script src="../static/script/index.js"></script>
+    <script src="../static/script/count.js"></script>
+  </body>
+</html>

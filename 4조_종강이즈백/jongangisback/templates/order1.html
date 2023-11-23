@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주문하기</title>
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/order.css' %}" />
+    <link rel="stylesheet" href=" {% static 'css/modal.css' %}"/>
+  </head>
+  <body>
+    <a class="example-btn">dd</a>
+    <div class="modal">
+      <div class="order-container">
+        <form action="">
+          <!-- action에는 입력된 로그인 데이터를 보낼 서버 페이지의 주소 -->
+          <div class="login-container">
+            <input type="text" class="nickname" placeholder="닉네임" />
+            <input type="number" class="people-num" placeholder="몇 명?" />
+          </div>
+          <!-- login-container -->
+          <div class="type-container container">
+            <h1>주종</h1>
+            <div class="type-buttons">
+              <input type="radio" name="type" id="soju" />
+              <label for="soju" 
+                ><img class="img-soju" src="{% static './src/img-soju.jpg' %}" alt="soju" />
+                <div class="drink-count" id="soju-count">0</div>
+              </label>
+              <input type="radio" name="type" id="beer" />
+              <label for="beer"
+                ><img class="img-beer" src="{% static './src/img-beer.jpg' %}" />
+                <div class="drink-count" id="beer-count">0</div></label
+              >
+              <input type="radio" name="type" id="mak" />
+              <label for="mak"
+                ><img class="img-mak" src="{% static './src/img-mak.jpg' %}" alt="mak" />
+                <div class="drink-count" id="mak-count">0</div></label
+              >
+            </div>
+          </div>
+          <!-- type-container -->
+          <div class="count-container container">
+            <h1>몇 병?</h1>
+            <div class="button-container container">
+              <div class="count-btn" id="minus">-</div>
+              <div id="count">1</div>
+              <div class="count-btn" id="plus">+</div>
+            </div>
+          </div>
+          <!-- count-container -->
+          <div class="order-btn-container">
+            <input type="submit" id="order-btn" value="주문!" />
+          </div>
+          <!-- order-btn-container -->
+        </form>
+      </div>
+      <!-- order-container -->
+    </div>
+    <!-- modal -->
+    <script src="{% static './script/modal.js' %}"></script>
+  </body>
+  

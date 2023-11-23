@@ -1,0 +1,58 @@
+<form method="post">
+
+    {% csrf_token %}
+  
+    <div class="user_id">
+  
+      <label for="user_id">유저 아이디:</label>
+  
+      <input type="text" name="user_id">
+  
+    </div>
+  
+    <div class="people">
+  
+        <label for="people">사람 수:</label>
+    
+        <input type="text" name="people">
+    
+    </div>
+
+    <div class="store_id">
+  
+        <label for="store_id">가게 아이디:</label>
+    
+        <input type="text" name="store_id">
+    
+    </div>
+
+
+    <div class="soju_quantity">
+  
+        <label for="soju_quantity">소주:</label>
+    
+        <input type="text" name="soju_quantity">
+    
+    </div>
+
+    <div class="beer_quantity">
+  
+        <label for="beer_quantity">맥주:</label>
+    
+        <input type="text" name="beer_quantity">
+    
+    </div>
+
+    <div class="makguli_quantity">
+  
+        <label for="makguli_quantity">막걸리:</label>
+    
+        <input type="text" name="makguli_quantity">
+    
+    </div>
+
+
+    
+    <button class="btn" type="submit">입력</button>
+  
+  </form>
