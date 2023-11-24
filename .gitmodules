@@ -7,3 +7,15 @@
 [submodule "1조_일석일조/hackathon-team1-frontend"]
 	path = 1조_일석일조/hackathon-team1-frontend
 	url = https://github.com/kucc/hackathon-team1-frontend.git
+[submodule "3조_보람삼조/KU-C-ToN_team3"]
+	path = 3조_보람삼조/KU-C-ToN_team3
+	url = https://github.com/kucc/KU-C-ToN_team3.git
+[submodule "5조_종깡총강/end-my-semester"]
+	path = 5조_종깡총강/end-my-semester
+	url = https://github.com/kucc/end-my-semester.git
+[submodule "2조_T2/2023_KUCthon_T2"]
+	path = 2조_T2/2023_KUCthon_T2
+	url = https://github.com/kucc/2023_KUCthon_T2.git
+[submodule "8조_무면허/traffic-accident-damage-prediction"]
+	path = 8조_무면허/traffic-accident-damage-prediction
+	url = https://github.com/kucc/traffic-accident-damage-prediction.git
